@@ -22,13 +22,12 @@ class ProfileSerializer(serializers.ModelSerializer):
         extra_kwargs = {'userProfile': {'read_only': True}}
 
 class PostSerializers(serializers.ModelSerializer):
-
     created_on = serializers.DateTimeField(format="%Y-%m-%d", read_only=True)
 
     class  Meta:
         model = Post
         fields = ('id', 'title', 'userPost', 'created_on', 'img', 'liked')
-        extra_kwargs = {'userProfile': {'read_only': True}}
+        extra_kwargs = {'userPost': {'read_only': True}}
 
 class CommentSerializers(serializers.ModelSerializer):
 
